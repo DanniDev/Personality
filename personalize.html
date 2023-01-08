@@ -75,7 +75,7 @@
                 <p class="section-subtitle mb-4">A bit description about the test here</p>
             </div>
             <!-- contact form -->
-            <form action="" class="test-form contact-form col-md-10 col-lg-6 m-auto">
+            <form action="" id="test-form" class="test-form contact-form col-md-10 col-lg-6 m-auto">
                 <div class="form-row">
                     <div class="form-group col-lg-12">
                         <input type="text" size="50" class="form-control py-4 fname" placeholder="Your Name" required>
@@ -121,8 +121,9 @@
                             <option value="31">31</option>
                         </select>
                     </div>
+                   <p class=" errorText text-danger font-weight-normal" style="display: none">* Please select a valid date.</p>
                     <div class="form-group col-sm-12 mt-3">
-                        <input type="button" value="Submit" class="btn submitBtn btn-outline-primary rounded test-btn">
+                        <input type="submit" value="Submit" class="btn submitBtn btn-outline-primary rounded test-btn">
                     </div>
                 </div>
             </form><!-- end of contact form -->
@@ -179,93 +180,19 @@
 
     <!--    Personalize test js-->
     <script type="text/javascript">
-        $(document).ready(function(){
-//initial variable for final results
-let result;let birthdayColor="";let personality=[];
-// flag to check if the test is done 
-// and ready to show the result to the user
-let loading=false;const colorDescription={1:"Love and desire for power",2:"Constructiveness and joy",3:"Intellectual power",4:"Self-control",5:"Faith and aspiration",6:"integration",7:"Transmtation of desires",8:"Understanding life",9:"Compassion"};
-// Charater groups
-let groups=[{id:1,code:"AJS",points:0,personality:"Red - resentment, Vanity, lack of compassion"},{id:2,code:"BKT",points:0,personality:"Orange - destructive tendencies, despair or exhibitionism"},{id:3,code:"CLU",points:0,personality:"Yellow - intellectual speculation, mental agitation"},{id:4,code:"DMV",points:0,personality:"Green - continuous feelings of injustice, revolt and rigidity"},{id:5,code:"ENW",points:0,personality:"Blue - Introversion, sadness"},{id:6,code:"FOX",points:0,personality:"Indigo - Isolation, intolerance, tendencies disintegration"},{id:7,code:"GPY",points:0,personality:"Violet - snobbery, grandeur, arrogance, fanaticism"},{id:8,code:"HQZ",points:0,personality:"Opal - ambitious, love of power, materialist"},{id:9,code:"IR",points:0,personality:"Carmine - egocentrism and indifference face of humanity"}];
-// Points calculator
-function charPointsCalculator(charPoints){const charLength=Object.keys(charPoints).length;
-//flag to check if loop is finished
-let LoopCounter=0;for(const char in charPoints){LoopCounter+=1;const charValue=charPoints[char];switch(char){
-// Group  1
-case"a":case"j":case"s":groups[0].points+=charValue;break;
-// Group  2
-case"b":case"k":case"t":groups[1].points+=charValue;break;
-// Group  3
-case"c":case"l":case"u":groups[2].points+=charValue;break;
-// Group  4
-case"d":case"m":case"v":groups[3].points+=charValue;break;
-// Group  5
-case"e":case"n":case"w":groups[4].points+=charValue;break;
-// Group  6
-case"f":case"o":case"x":groups[5].points+=charValue;break;
-// Group  7
-case"g":case"p":case"y":groups[6].points+=charValue;break;
-// Group  8
-case"h":case"q":case"z":groups[7].points+=charValue;break;
-// Group  9
-case"i":case"r":groups[8].points+=charValue;break;default:console.log("Nothing matches the groups");break}}if(LoopCounter===charLength){let isPersonalize=getGroupsPersonality(groups);if(isPersonalize&&birthdayColor.length>0){
-//                        console.log('Result =>', personality);
-//                        console.log('Color by birthday =>',
-//                            birthdayColor);
-//                        loading = false;
-}}}
-// Personality selector based on points ranking
-function getGroupsPersonality(rankedGroups){let highestPoint=0;
-// looping through the groups
-// for the highest commong point
-for(const group of rankedGroups){if(group.points>highestPoint){highestPoint=group.points}}
-//looping and getting the highest
-//common point group personality.
-for(const group of rankedGroups){if(group.points===highestPoint){personality.push(group.personality)}}return true}
-// Counter characters in user's name
-function countCharacters(str){
-//Converte the string into lowercase
-str=str.toLocaleLowerCase();str=str.replace(/\s/g,"");
-// Initialize a map to store the character counts
-const characterCounts=new Map;
-// Loop through the string and count the occurrences of each character
-for(const character of str){if(characterCounts.has(character)){
-// If the character is already in the map, increment the count
-characterCounts.set(character,characterCounts.get(character)+1)}else{
-// If the character is not in the map, add it with a count of 1
-characterCounts.set(character,1)}}
-//Convert character conuts map to string object
-const convertedResult={};characterCounts.forEach((value,key)=>{convertedResult[key]=value});
-// Return the character counts map
-return convertedResult}
-//Date cal
-function birthDayCalculator(birthday){birthday=Number(birthday);if(birthday===0){console.log("Choose correct value");return true}else if(birthday===29){birthdayColor=colorDescription[2];return true}else if(birthday===19||birthday===28){birthdayColor=colorDescription[1];return true}else if(birthday>9&&birthday!=29&&birthday!=19&&birthday!=28){
-//handle number greater than 9
-//convert it to string
-let convertedBDay=birthday.toString();convertedBDay=convertedBDay.split("");const sum=Number(convertedBDay[0])+Number(convertedBDay[1]);for(const colorNum in colorDescription){if(sum===Number(colorNum)){birthdayColor=colorDescription[sum]}}return true}else if(birthday<10){
-//handle number less than 10
-for(const colorNum in colorDescription){if(birthday===Number(colorNum)){birthdayColor=colorDescription[birthday]}}return true}}
-//Reset test button
-//            $('.resetBtn').on('click', function(){
-// $('.result-card').hide();
-// $('#personalityUl').children().remove();
-// $('.test-header, .test-form').show();
-// })
-//
-//            Test submit button
-$(".test-btn").on("click",function(){let name=$(".fname").val();let email=$(".email").val();let birthDay=$("#birthday").val();if(name.length>0&&birthDay!=="0"){loading=true;$(".submitBtn").val("Please wait...");
-// Name characters counter 
-const charPoints=countCharacters(name);
-//                Birthday Calculator
-const calDate=birthDayCalculator(birthDay);if(calDate&&charPoints){
-// Groups points calculator / Assigner
-charPointsCalculator(charPoints)}if(birthdayColor.length>0&&personality.length>0){
-//show result on page
-$(".birthday-color").text(birthdayColor);personality.forEach(el=>{const li=$("<li>").addClass("list-group-item border-0 ").text(el).appendTo($(".personalities"))});loading=false}if(!loading){
-//Reset everything back to default
-$(".test-header, .test-form").hide();$(".result-card").show();$(".fname").val("");$("#birthday").val("0");name="";birthDay="0";
-//                    personality = [];
-groups[0].points=0;groups[1].points=0;groups[2].points=0;groups[3].points=0;groups[4].points=0;groups[5].points=0;groups[6].points=0;groups[7].points=0;groups[8].points=0}}})});
-    </script>
+        $(document).ready(function(){let result;let birthdayColor='';let personality=[];let loading=!1;const colorDescription={1:'Love and desire for power',2:'Constructiveness and joy',3:'Intellectual power',4:'Self-control',5:'Faith and aspiration',6:'integration',7:'Transmtation of desires',8:'Understanding life',9:'Compassion'};let groups=[{id:1,code:'AJS',points:0,personality:"Red - resentment, Vanity, lack of compassion"},{id:2,code:'BKT',points:0,personality:"Orange - destructive tendencies, despair or exhibitionism"},{id:3,code:'CLU',points:0,personality:"Yellow - intellectual speculation, mental agitation"},{id:4,code:'DMV',points:0,personality:"Green - continuous feelings of injustice, revolt and rigidity"},{id:5,code:'ENW',points:0,personality:"Blue - Introversion, sadness"},{id:6,code:'FOX',points:0,personality:"Indigo - Isolation, intolerance, tendencies disintegration"},{id:7,code:'GPY',points:0,personality:"Violet - snobbery, grandeur, arrogance, fanaticism"},{id:8,code:'HQZ',points:0,personality:"Opal - ambitious, love of power, materialist"},{id:9,code:'IR',points:0,personality:"Carmine - egocentrism and indifference face of humanity"},];function charPointsCalculator(charPoints){const charLength=Object.keys(charPoints).length;let LoopCounter=0;for(const char in charPoints){LoopCounter+=1;const charValue=charPoints[char];switch(char){case 'a':case 'j':case 's':groups[0].points+=charValue;break;case 'b':case 'k':case 't':groups[1].points+=charValue;break;case 'c':case 'l':case 'u':groups[2].points+=charValue;break;case 'd':case 'm':case 'v':groups[3].points+=charValue;break;case 'e':case 'n':case 'w':groups[4].points+=charValue;break;case 'f':case 'o':case 'x':groups[5].points+=charValue;break;case 'g':case 'p':case 'y':groups[6].points+=charValue;break;case 'h':case 'q':case 'z':groups[7].points+=charValue;break;case 'i':case 'r':groups[8].points+=charValue;break;default:console.log('Nothing matches the groups');break}}
+if(LoopCounter===charLength){let isPersonalize=getGroupsPersonality(groups)}}
+function getGroupsPersonality(rankedGroups){let highestPoint=0;for(const group of rankedGroups){if(group.points>highestPoint){highestPoint=group.points}}
+for(const group of rankedGroups){if(group.points===highestPoint){personality.push(group.personality)}}
+return!0};function countCharacters(str){str=str.toLocaleLowerCase();str=str.replace(/\s/g,"");const characterCounts=new Map();for(const character of str){if(characterCounts.has(character)){characterCounts.set(character,characterCounts.get(character)+1)}else{characterCounts.set(character,1)}}
+const convertedResult={};characterCounts.forEach((value,key)=>{convertedResult[key]=value});return convertedResult}
+function birthDayCalculator(birthday){birthday=Number(birthday);if(birthday===0){console.log('Choose correct value');return!0}else if(birthday===29){birthdayColor=colorDescription[2];return!0}else if(birthday===19||birthday===28){birthdayColor=colorDescription[1];return!0}else if(birthday>9&&birthday!=29&&birthday!=19&&birthday!=28){let convertedBDay=birthday.toString();convertedBDay=convertedBDay.split('');const sum=Number(convertedBDay[0])+Number(convertedBDay[1]);for(const colorNum in colorDescription){if(sum===Number(colorNum)){birthdayColor=colorDescription[sum]}}
+return!0}else if(birthday<10){for(const colorNum in colorDescription){if(birthday===Number(colorNum)){birthdayColor=colorDescription[birthday]}}
+return!0}};function subscribeUser(email,dateTraits,nameTraits){$.ajax({method:"POST",url:"https://cors-proxy.example.com/?url=https://us14.api.mailchimp.com/3.0/lists/9e6ad3fb36/members/",data:{email_address:email,status:"subscribed",},contentType:'application/json; charset=utf-8','dataType':"jsonp","crossDomain":!0,headers:{"accept":"application/json","Access-Control-Allow-Origin":"*","Authorization":"Basic d7c25b7bf7b06c9445effc88a048f74b-us14"},success:function(response){console.log("Subscriber added successfully!")},error:function(response){console.log("There was an error adding user");console.log(response)}})}
+$("#test-form").submit(function(e){e.preventDefault();let name=$('.fname').val();let email=$('.email').val();let birthDay=$('#birthday').val();if(birthDay!=="0"){loading=!0;$('.submitBtn').val('Please wait...');const charPoints=countCharacters(name);const calDate=birthDayCalculator(birthDay);if(calDate&&charPoints){charPointsCalculator(charPoints)}
+if(birthdayColor.length>0&&personality.length>0){$('.birthday-color').text(birthdayColor);personality.forEach(el=>{const li=$('<li>').addClass('list-group-item border-0 ').text(el).appendTo($('.personalities'))});subscribeUser(email,birthdayColor,personality);loading=!1}
+if(!loading){$('.test-header, .test-form').hide();$('.result-card').show();$('.fname').val('');$('#birthday').val('0');name="";birthDay="0";groups[0].points=0;groups[1].points=0;groups[2].points=0;groups[3].points=0;groups[4].points=0;groups[5].points=0;groups[6].points=0;groups[7].points=0;groups[8].points=0}}else{$('.errorText').show()}})})
+            
+</script>
 
 </body></html>
