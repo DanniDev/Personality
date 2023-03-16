@@ -1,198 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with Meyawo landing page.">
     <meta name="author" content="Devcrud">
-    <title>V I A | Viata In Armonie</title>
-    <link rel="icon" href="./WhatsApp_Image_2022-11-20_at_20.13.52-removebg-preview.png" />
-    <!-- font icons -->
-    <link rel="stylesheet" href="./themify-icons.css">
-    <!-- Bootstrap + Meyawo main styles -->
-    <link rel="stylesheet" href="./meyawo.css">
-    <link rel="stylesheet" href="./menudrop.css">
+    <title>Sign up</title>
+    <link rel="icon" href="assets/imgs/WhatsApp_Image_2022-11-20_at_20.13.52-removebg-preview.png" />
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+<body style="margin: 0;">
 
     <!-- Page Navbar -->
-    <nav id="test-navbar" class="custom-navbar" data-spy="affix" data-offset-top="20">
-        <div class="container " id="main" role="main">
-            <a class="logo" href="#"><img src="./WhatsApp_Image_2022-11-20_at_20.13.52-removebg-preview (1).png " alt=""></a>
-            <ul class="nav menu show">
 
-                <li class="item">
-                    <a class="link" href="./index.html">Acasa</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#about">Cum te pot sprijinii</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="./personalize.html">Demo</a>
-                </li>
-                <li class="item menu">
-                    <a class="link drop-down" href="#portfolio">Cursuri</a>
-                    <ul class="submenu ">
-                        <li><a href="">Tinerii Responsabili </a></li>
-                        <li><a href="">Descopera-ti Menirea </a></li>
-                        <li><a href="">Design Cromatic </a></li>
-                    </ul>
-                </li>
+     <main style="height: 100%; position: relative;">
 
-                <li class="item">
-                    <a class="link" href="#testmonial">Descopera-ti Menirea</a>
-                </li>
+        <div style="height: 100%">
 
-                <li class="item">
-                    <a class="link" href="#contact">Contact</a>
-                </li>
-                <li class="item ml-md-3">
+            <style>
+                /* DECREASE FONT SIZE AND PADDING ON SMALL SCREEN*/
 
-                    <a href="#" class="animated-button1">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Programeaza o discutie <br>Prima Este Gratuita
-                    </a>
-                </li>
-            </ul>
-            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic is-active">
-                <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
-                </div>
-            </a>
+                /* SMALL SCREEN SIZE*/
+
+                @media only screen and (max-width: 421px) {
+                    .main {
+                        padding: 0 !important;
+                    }
+
+                    .wrapper {
+                        padding: 0 5% !important;
+                    }
+
+                    .heading {
+                        font-size: 26px !important;
+                    }
+
+                    .event {
+                        width: 300px !important;
+                    }
+
+                    .event-date {
+                        font-size: 14px !important;
+                    }
+                }
+
+                /* MEDUIM SCREEN SIZE*/
+                @media (min-width:424px) and (max-width:640px) {
+
+                    .main {
+                        padding: 30px 20px !important;
+                    }
+
+                    .wrapper {
+                        padding: 0 1% !important
+                    }
+
+                    .heading {
+                        font-size: 28px !important;
+                    }
+                }
+            </style>
+            <!--            FORM SUBMITTING OVERLAY-->
+            <div class="form-overlay" style="width: 100%; height: 100%; z-index: 1111; display: flex; justify-content: center; align-items: center; background: #000000eb; position: absolute; height: 100vh; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none">
+                <div style="color: white; background: black; font-size: 21px; padding: 15px 40px; font-weight: 500; font-family: &quot;Helvetica Neue&quot;, Arial; max-width: 300px; display: flex;
+                justify-content: center; align-items: center; margin: 0 auto; position: relative; top: 40%;">Sending form...</div>
+            </div>
+            <div style="display: flex; justify-content: center; min-height: 100%; padding-top: 20px; padding-bottom: 40px; width: 100%; box-sizing: border-box;">
+                <form style="max-width: 100%;" id='subscribeForm'>
+                    <div class="main" style="height: fit-content; width: 960px; background-color: rgb(255, 255, 255); padding: 60px; padding-top: 0px; max-width: 100%; box-sizing: border-box;">
+                        <div style="display: flex; position: relative;">
+                            <div style="display: flex; flex-direction: column; padding: 10px 6px; position: relative; flex: 1 1 0%;"><img src="logo.png" alt="logo" style="max-width: 100%; width: 100px; margin: 0px auto;"></div>
+
+                        </div>
+                        <div style="display: flex; flex-direction: column; padding: 10px 6px 5px; position: relative; flex: 1 1 0%; color: #ffffff">
+                            <div class="event" style="display: flex; position: absolute; flex-direction: column; padding: 10px 6px; position: relative; flex: 1 1 0%; background-color: rgb(17 113 189); border-radius: 10px; color: #ffffff; width: 400px; top: 50%; margin-top: 25px; left: 50%; transform: translate(-50%, -50%);">
+                                <h2 class="event-date" style="text-align: center; font-family: 'Impact', Arial; font-size: 20px; letter-spacing: 1px; font-weight: 400; color: #ffffff; margin-bottom: 0">FREE CHALLENGE | STARTS MARCH 20, 2023</h2>
+                            </div>
+                        </div>
+                        <div class="form-inline">
+                            <div style="display: flex; position: relative;">
+                                <div style="display: flex; flex-direction: column; padding: 0px; padding-top: 0px;  position: relative; flex: 1 1 0%;">
+                                    <style>
+                                        * {
+                                            margin-block: unset;
+                                        }
+                                    </style>
+                                    <div style="width: 100%; font-family: &quot;Helvetica Neue&quot;, Arial; color: rgb(34, 34, 34);">
+                                        <style>
+                                            div h1 span h1,
+                                            div h1 span h2,
+                                            div h1 span h3 {
+                                                font-size: unset;
+                                            }
+                                        </style>
+                                        <h1 class='heading' style="text-align: center; font-family: 'Helvetica Neue', Arial; font-size: 28px; font-weight: 700; color: #222; "><span class="heading" style="text-align: center; font-family: 'Helvetica Neue', Arial; font-weight: 700; color: #222; line-height: 36px; font-size: 36px;">Join Our 6 Week Challenge And Get Fit For Summer Without Diets Or Restrictions!</span></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrapper" style="padding: 0 15%;">
+                                <div style="display: flex; position: relative;">
+                                    <div style="display: flex; flex-direction: column; padding: 25px 6px 20px; background-color: rgba(255, 255, 255, 0); position: relative; flex: 1 1 0%;">
+                                        <style>
+                                            * {
+                                                margin-block: unset;
+                                            }
+                                        </style>
+                                        <div style="width: 100%; font-family: &quot;Helvetica Neue&quot;, Arial; color: rgb(34, 34, 34);">
+                                            <div style="font-family: 'Helvetica Neue', Arial; font-size: 18px; line-height: 20px; color: #5e5a5a; text-align: center;"><span styles="font-family: 'Helvetica Neue', Arial; font-size: 13px; line-height: 100%; color: #222; text-align:center;">PLUS: participate in the challenge to WIN a $2,000 weekend vacay in Miami for you & a friend!
+                                                </span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; position: relative;">
+                                    <div style="display: flex; flex-direction: column; padding: 10px 6px; background-color: rgba(255, 255, 255, 0); position: relative; flex: 1 1 0%;">
+                                        <div class="errorMessage" style="width: 100%; font-family: &quot;Helvetica Neue&quot;, Arial; color: rgb(34, 34, 34); display: none;">
+                                            <p style="text-align: center; font-family: 'Helvetica Neue', Arial; font-size: 14px; font-weight: 300; color: red; padding:0 30px; padding-bottom: 10px;"><span style="text-align: center; font-family: 'Helvetica Neue', font-size:14px; Arial; font-weight: 400; color: red; line-height: 16px;">*Something went wrong, try again!</span></p>
+                                        </div>
+                                        <input name="$first_name" type="hidden" value="" style="display: none;">
+                                        <div style="display: flex; width: 100%; flex-direction: column;">
+                                            <div style="display: flex;"><input required class="fname" placeholder="Your first name" aria-required="true" value="" style="color: rgb(34, 34, 34); font-family: &quot;Helvetica Neue&quot;, Arial; font-size: 16px; font-weight: 400; width: 100%; height: 50px; padding-left: 16px; border: 1px solid #9e9e9e; border-radius: 0px; box-sizing: border-box;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; position: relative;">
+                                    <div style="display: flex; flex-direction: column; padding: 10px 6px; background-color: rgba(255, 255, 255, 0); position: relative; flex: 1 1 0%;"><input name="$email" type="hidden" value="" style="display: none;">
+                                        <div style="display: flex; width: 100%; flex-direction: column;">
+                                            <div style="display: flex;"><input required class="email" id="" placeholder="Your email address" aria-required="true" value="" style="color: rgb(34, 34, 34); font-family: &quot;Helvetica Neue&quot;, Arial; font-size: 16px; font-weight: 400; width: 100%; height: 50px; padding-left: 16px; border: 1px solid #9e9e9e; border-radius: 0px; box-sizing: border-box;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="wrapper" style="padding: 0 15%;">
+                            <div class="message" style="display: flex; position: relative;">
+                                <div style="display: flex; flex-direction: column; padding: 10px 6px; background-color: rgba(255, 255, 255, 0); position: relative; flex: 1 1 0%;">
+                                    <button type="submit" class="submitBtn" style="font-family: &quot;Helvetica Neue&quot;, Arial; font-size: 30px; font-weight: 600; color: rgb(255, 255, 255); background-color: rgb(17 113 189); border-radius: 2px; border: 0px solid rgb(34, 34, 34); height: 70px; width: 100%; padding: 0px; margin: 0px auto; cursor: pointer;">
+                                        <style>
+                                            button:hover {
+                                                background-color: rgb(15 99 165) !important;
+                                            }
+                                        </style>
+                                        JOIN FOR FREE
+                                    </button>
+<!--
+                                    <div class="success" style="padding: 50px 30px; text-align: center; border: 1px solid #f5b38d; font-family: &quot;Helvetica Neue&quot;, Arial; line-height: 25px; font-size: 18px; display: none;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="80" height="80" viewBox="0 0 256 256" xml:space="preserve">
+
+                                            <defs>
+                                            </defs>
+                                            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                                                <path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(245,179,141); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                                <polygon points="37.33,69.32 37.33,69.32 37.33,47.17 37.33,47.17 66.85,33.97 77.93,45.05 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(245,179,141); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) " />
+                                                <polygon points="37.33,69.32 15.14,47.13 26.22,36.05 37.33,47.17 63.78,20.68 74.86,31.75 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) " />
+                                            </g>
+                                        </svg>
+                                        <p style='padding-top:20px;'>Thanks for subscribing, a confirmation email has been sent to your email!
+                                        </p>
+                                    </div>
+-->
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 100%; font-family: &quot;Helvetica Neue&quot;, Arial; color: rgb(34, 34, 34);">
+                            <p style="text-align: center; font-family: 'Helvetica Neue', Arial; font-size: 12px; font-weight: 300; color: #999999; padding:0 30px;"><span style="text-align: center; font-family: 'Helvetica Neue', font-size:12px; Arial; font-weight: 400; color: #999999; line-height: 16px;">Your information is private & secure. We will never spam or annoy you.</span></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-    </nav><!-- End of Page Navbar -->
-
-
-    <!-- contact section -->
-    <div id="card" class="pt-5 mt-5">
-        <div class="container pt-5 mt-5 mx-auto">
-            <div class="test-header col-md-10 col-lg-6 mx-auto">
-                <h2 class="section-title mb-1">Demo Test Header </h2>
-                <p class="section-subtitle mb-4">A bit description about the test here</p>
-            </div>
-            <!-- contact form -->
-            <form action="" id="test-form" class="test-form contact-form col-md-10 col-lg-6 m-auto">
-                <div class="form-row">
-                    <div class="form-group col-lg-12">
-                        <input type="text" size="50" class="form-control py-4 fname" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group col-lg-12">
-                        <input type="email" class="form-control py-4 email" placeholder="Enter Email" required>
-                    </div>
-                    <div class="form-group col-lg-12">
-                        <select id="birthday" class="form-control form-select form-control-lg w-100 birthday" required>
-                            <option value="0" selected>
-                                Select Birthday ( 1st - 31st )
-                            </option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
-                            <option value="24">24</option>
-                            <option value="25">25</option>
-                            <option value="26">26</option>
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                            <option value="29">29</option>
-                            <option value="30">30</option>
-                            <option value="31">31</option>
-                        </select>
-                    </div>
-                   <p class=" errorText text-danger font-weight-normal" style="display: none">* Please select a valid date.</p>
-                    <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Submit" class="btn submitBtn btn-outline-primary rounded test-btn">
-                    </div>
-                </div>
-            </form><!-- end of contact form -->
-
-            <div class="mx-auto container col-lg-9 col-md-10 result-card">
-                <h2 class="ml-0 pl-0 col-lg-8 mx-auto">Here is your test result :</h2>
-                <div class="card col-lg-8 p-3 mt-4 mx-auto">
-                    <div class="card-header pl-1 font-weight-bold">
-                        What your birthday says about you
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item border-0 birthday-color"></li>
-                    </ul>
-                    <div class="card-header pl-1 font-weight-bold mt-4">
-                        Peronality by name
-                    </div>
-                    <ul id="personalityUl" class="list-group list-group-flush personalities">
-
-                    </ul>
-                </div>
-                <div class="pl-0 col-lg-8 mt-3 mx-auto">
-                    <a href='./personalize.html' class="btn resetBtn">Try Again</a>
-                </div>
-            </div>
-        </div><!-- end of container -->
-    </div><!-- end of contact section -->
-
-    <!-- footer -->
-    <div class="container">
-        <footer class="footer">
-            <p class="mb-0">Copyright <script>
-                    document.write(new Date().getFullYear())
-                </script> &copy; <a href="http://www.devcrud.com">DevCRUD</a></p>
-            <div class="social-links text-right m-auto ml-sm-auto">
-                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
-            </div>
-        </footer>
-    </div> <!-- end of page footer -->
+    </main>
 
     <!-- core  -->
-    <script src="./jquery-3.4.1.min.js"></script>
-    <script src="./bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- bootstrap 3 affix -->
-    <script src="./bootstrap.affix.js"></script>
-
-    <!-- Meyawo js -->
-    <script src="./meyawo.js"></script>
-
-    <!--    Personalize test js-->
+    <!--    CUSTOM JS -->
     <script type="text/javascript">
-        $(document).ready(function(){let result;let birthdayColor='';let personality=[];let loading=!1;const colorDescription={1:'Love and desire for power',2:'Constructiveness and joy',3:'Intellectual power',4:'Self-control',5:'Faith and aspiration',6:'integration',7:'Transmtation of desires',8:'Understanding life',9:'Compassion'};let groups=[{id:1,code:'AJS',points:0,personality:"Red - resentment, Vanity, lack of compassion"},{id:2,code:'BKT',points:0,personality:"Orange - destructive tendencies, despair or exhibitionism"},{id:3,code:'CLU',points:0,personality:"Yellow - intellectual speculation, mental agitation"},{id:4,code:'DMV',points:0,personality:"Green - continuous feelings of injustice, revolt and rigidity"},{id:5,code:'ENW',points:0,personality:"Blue - Introversion, sadness"},{id:6,code:'FOX',points:0,personality:"Indigo - Isolation, intolerance, tendencies disintegration"},{id:7,code:'GPY',points:0,personality:"Violet - snobbery, grandeur, arrogance, fanaticism"},{id:8,code:'HQZ',points:0,personality:"Opal - ambitious, love of power, materialist"},{id:9,code:'IR',points:0,personality:"Carmine - egocentrism and indifference face of humanity"},];function charPointsCalculator(charPoints){const charLength=Object.keys(charPoints).length;let LoopCounter=0;for(const char in charPoints){LoopCounter+=1;const charValue=charPoints[char];switch(char){case 'a':case 'j':case 's':groups[0].points+=charValue;break;case 'b':case 'k':case 't':groups[1].points+=charValue;break;case 'c':case 'l':case 'u':groups[2].points+=charValue;break;case 'd':case 'm':case 'v':groups[3].points+=charValue;break;case 'e':case 'n':case 'w':groups[4].points+=charValue;break;case 'f':case 'o':case 'x':groups[5].points+=charValue;break;case 'g':case 'p':case 'y':groups[6].points+=charValue;break;case 'h':case 'q':case 'z':groups[7].points+=charValue;break;case 'i':case 'r':groups[8].points+=charValue;break;default:console.log('Nothing matches the groups');break}}
-if(LoopCounter===charLength){let isPersonalize=getGroupsPersonality(groups)}}
-function getGroupsPersonality(rankedGroups){let highestPoint=0;for(const group of rankedGroups){if(group.points>highestPoint){highestPoint=group.points}}
-for(const group of rankedGroups){if(group.points===highestPoint){personality.push(group.personality)}}
-return!0};function countCharacters(str){str=str.toLocaleLowerCase();str=str.replace(/\s/g,"");const characterCounts=new Map();for(const character of str){if(characterCounts.has(character)){characterCounts.set(character,characterCounts.get(character)+1)}else{characterCounts.set(character,1)}}
-const convertedResult={};characterCounts.forEach((value,key)=>{convertedResult[key]=value});return convertedResult}
-function birthDayCalculator(birthday){birthday=Number(birthday);if(birthday===0){console.log('Choose correct value');return!0}else if(birthday===29){birthdayColor=colorDescription[2];return!0}else if(birthday===19||birthday===28){birthdayColor=colorDescription[1];return!0}else if(birthday>9&&birthday!=29&&birthday!=19&&birthday!=28){let convertedBDay=birthday.toString();convertedBDay=convertedBDay.split('');const sum=Number(convertedBDay[0])+Number(convertedBDay[1]);for(const colorNum in colorDescription){if(sum===Number(colorNum)){birthdayColor=colorDescription[sum]}}
-return!0}else if(birthday<10){for(const colorNum in colorDescription){if(birthday===Number(colorNum)){birthdayColor=colorDescription[birthday]}}
-return!0}};function subscribeUser(email,dateTraits,nameTraits){$.ajax({method:"POST",url:"https://us14.api.mailchimp.com/3.0/lists/9e6ad3fb36/members/",data:{email_address:email,status:"subscribed",},contentType:'application/json; charset=utf-8','dataType':"jsonp","crossDomain":!0,headers:{"accept":"application/json","Access-Control-Allow-Origin":"*","Authorization":"Basic d7c25b7bf7b06c9445effc88a048f74b-us14"},success:function(response){console.log("Subscriber added successfully!")},error:function(response){console.log("There was an error adding user");console.log(response)}})}
-$("#test-form").submit(function(e){e.preventDefault();let name=$('.fname').val();let email=$('.email').val();let birthDay=$('#birthday').val();if(birthDay!=="0"){loading=!0;$('.submitBtn').val('Please wait...');const charPoints=countCharacters(name);const calDate=birthDayCalculator(birthDay);if(calDate&&charPoints){charPointsCalculator(charPoints)}
-if(birthdayColor.length>0&&personality.length>0){$('.birthday-color').text(birthdayColor);personality.forEach(el=>{const li=$('<li>').addClass('list-group-item border-0 ').text(el).appendTo($('.personalities'))});subscribeUser(email,birthdayColor,personality);loading=!1}
-if(!loading){$('.test-header, .test-form').hide();$('.result-card').show();$('.fname').val('');$('#birthday').val('0');name="";birthDay="0";groups[0].points=0;groups[1].points=0;groups[2].points=0;groups[3].points=0;groups[4].points=0;groups[5].points=0;groups[6].points=0;groups[7].points=0;groups[8].points=0}}else{$('.errorText').show()}})})
-            
-</script>
+        $(document).ready(function() {
 
-</body></html>
+
+            $('#subscribeForm').submit(function(e) {
+                e.preventDefault();
+                let name = $('.fname').val();
+                let email = $('.email').val();
+                const link = 'https://www.google.com/';
+                
+                //SHOW MODAL ON FORM SUBMIT
+                $('.form-overlay').show();
+
+
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://manage.kmail-lists.com/ajax/subscriptions/subscribe",
+                    "method": "POST",
+                    "headers": {
+                        "content-type": "application/x-www-form-urlencoded",
+                        "cache-control": "no-cache"
+                    },
+                    "data": {
+                        "g": "YmhNvv", // replace LIST_ID with id of list to be subscribed
+                        "email": email,
+                        // pass in additional fields, each additional field
+                        // must be included in the $fields string separated by commas
+                        "$fields": "$source, $first_name, $last_name",
+                        "$source": "Custom Form",
+                        "$first_name": name,
+                    }
+                };
+                $.ajax(settings).done(function(response) {
+                    console.log(response.data.is_subscribed);
+
+                    if (response.data.is_subscribed === true) {
+
+                        // HIDE MODAL ON SUCCESS
+                        $('.form-overlay').hide();
+
+                        // CLEAN UP FORM FIELDS
+                        email = '';
+                        name = '';
+
+                        // REDIRECT TO PAGE AFTER SUCCESS
+                        window.location.replace(link);
+                    } else {
+
+                        // HIDE MODAL ON FAIL
+                        $('.form-overlay').hide();
+
+                        // SHOW ERROR MESSAGE WHEN FORM FAILED
+//                        $('.errorMessage').show();
+//                        window.location.replace(link);
+                    }
+                })
+
+            });
+
+        })
+    </script>
+
+</body>
+
+</html>
