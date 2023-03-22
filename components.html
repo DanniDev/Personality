@@ -64,7 +64,7 @@
                 justify-content: center; align-items: center; margin: 0 auto; position: relative; top: 40%;">Sending form...</div>
             </div>
             <div style="display: flex; justify-content: center; min-height: 100%; padding-top: 20px; padding-bottom: 40px; width: 100%; box-sizing: border-box;">
-                <form style="max-width: 100%;">
+                <form style="max-width: 100%;" id="form">
                     <div class="main" style="height: fit-content; width: 960px; background-color: rgb(255, 255, 255); padding: 60px; padding-top: 0px; max-width: 100%; box-sizing: border-box;">
                         <div style="display: flex; position: relative;">
                             <div style="display: flex; flex-direction: column; padding: 10px 6px; position: relative; flex: 1 1 0%;"><img src="https://img.mailinblue.com/4075905/images/content_library/original/64134eb48c0ed00fb0495415.png" alt="logo" style="max-width: 100%; width: 100px; margin: 0px auto;"></div>
@@ -158,43 +158,82 @@
 
     <!--    CUSTOM JS -->
     <script type="text/javascript">
+//                $(document).ready(function() {
+//                    $('#submit').click(function(e) {
+//                        e.preventDefault();
+//                        var name = $('#name').val();
+//                        var email = $('#email').val();
+//                        var url = window.location.href;
+//                        const encoded = window.btoa(`76a18954737473b80d6f6f3b97a0619d:3b0e22028f5189bb098ccd05f3bb1981`);
+//        
+//                        $.ajax({
+//                            type: 'POST',
+//                            url: 'https://api.mailjet.com/v3/REST/contactslist/10244091/managecontact',
+//                            headers: {
+//                                "Access-Control-Allow-Origin": "*",
+//                                'Access-Control-Allow-Credentials':'true',
+//                                'Accept': 'application/json',
+//                                'Authorization': 'Basic ' + btoa('76a18954737473b80d6f6f3b97a0619d:3b0e22028f5189bb098ccd05f3bb1981')
+//        
+//                            },
+//                            dataType: 'json',
+//                            data: {
+//                                'Action': 'addforce',
+//                                'Email': email,
+//                                'Name': name,
+//                                'Source': url,
+//                            },
+//                            success: function(response) {
+//                                console.log('Success text =>', response);
+//                                alert('You have been subscribed to our mailing list!');
+//                            },
+//                            error: function(xhr, status, error) {
+//                                console.log('Error text =>', xhr.responseText);
+//                                console.log('Error Mesg =>', error);
+//                                alert('Error subscribing to mailing list.');
+//                            }
+//                        });
+//                    });
+//                });
+
         $(document).ready(function() {
-            $('#submit').click(function(e) {
+
+
+            $('#form').submit(function(e) {
                 e.preventDefault();
+
                 var name = $('#name').val();
                 var email = $('#email').val();
                 var url = window.location.href;
                 const encoded = window.btoa(`76a18954737473b80d6f6f3b97a0619d:3b0e22028f5189bb098ccd05f3bb1981`);
 
-                $.ajax({
-                    type: 'POST',
-                    url: 'https://api.mailjet.com/v3/REST/contactslist/10244091/managecontact',
-                    headers: {
-                        "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Methods": "POST",
-                        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization",
-                        Authorization: `Basic ${encoded}`
-
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://api.mailjet.com/v3/REST/contactslist/10244091/managecontact",
+                    "method": "POST",
+                    "headers": {
+                        "content-type": "application/json",
+                        'Accept': 'application/json',
+                        "cache-control": "no-cache",
+                        'Authorization': 'Basic ' + btoa('76a18954737473b80d6f6f3b97a0619d:3b0e22028f5189bb098ccd05f3bb1981'),
+                        	'Access-Control-Allow-Origin': '*',
+						'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+						'Access-Control-Allow-Headers': 'Content-Type'
                     },
-                    dataType: 'json',
-                    data: {
+                    "data": {
                         'Action': 'addforce',
                         'Email': email,
                         'Name': name,
-                        'Source': url,
-                    },
-                    success: function(response) {
-                        console.log('Success text =>', response);
-                        alert('You have been subscribed to our mailing list!');
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('Error text =>', xhr.responseText);
-                        console.log('Error Mesg =>', error);
-                        alert('Error subscribing to mailing list.');
                     }
-                });
+                };
+                $.ajax(settings).done(function(response) {
+                    console.log(response);
+                })
+
             });
-        });
+
+        })
     </script>
 
 </body>
