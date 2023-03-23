@@ -116,7 +116,7 @@
                                         </div>
                                         <input name="$first_name" type="hidden" value="" style="display: none;">
                                         <div style="display: flex; width: 100%; flex-direction: column;">
-                                            <div style="display: flex;"><input required id='name' class="fname" placeholder="Your first name" aria-required="true" value="" style="color: rgb(34, 34, 34); font-family: &quot;Helvetica Neue&quot;, Arial; font-size: 16px; font-weight: 400; width: 100%; height: 50px; padding-left: 16px; border: 1px solid #9e9e9e; border-radius: 0px; box-sizing: border-box;"></div>
+                                            <div style="display: flex;"><input required id='name' class="fname" placeholder="Your name" aria-required="true" value="" style="color: rgb(34, 34, 34); font-family: &quot;Helvetica Neue&quot;, Arial; font-size: 16px; font-weight: 400; width: 100%; height: 50px; padding-left: 16px; border: 1px solid #9e9e9e; border-radius: 0px; box-sizing: border-box;"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -158,44 +158,6 @@
 
     <!--    CUSTOM JS -->
     <script type="text/javascript">
-//                $(document).ready(function() {
-//                    $('#submit').click(function(e) {
-//                        e.preventDefault();
-//                        var name = $('#name').val();
-//                        var email = $('#email').val();
-//                        var url = window.location.href;
-//                        const encoded = window.btoa(`76a18954737473b80d6f6f3b97a0619d:3b0e22028f5189bb098ccd05f3bb1981`);
-//        
-//                        $.ajax({
-//                            type: 'POST',
-//                            url: 'https://api.mailjet.com/v3/REST/contactslist/10244091/managecontact',
-//                            headers: {
-//                                "Access-Control-Allow-Origin": "*",
-//                                'Access-Control-Allow-Credentials':'true',
-//                                'Accept': 'application/json',
-//                                'Authorization': 'Basic ' + btoa('76a18954737473b80d6f6f3b97a0619d:3b0e22028f5189bb098ccd05f3bb1981')
-//        
-//                            },
-//                            dataType: 'json',
-//                            data: {
-//                                'Action': 'addforce',
-//                                'Email': email,
-//                                'Name': name,
-//                                'Source': url,
-//                            },
-//                            success: function(response) {
-//                                console.log('Success text =>', response);
-//                                alert('You have been subscribed to our mailing list!');
-//                            },
-//                            error: function(xhr, status, error) {
-//                                console.log('Error text =>', xhr.responseText);
-//                                console.log('Error Mesg =>', error);
-//                                alert('Error subscribing to mailing list.');
-//                            }
-//                        });
-//                    });
-//                });
-
         $(document).ready(function() {
 
 
@@ -205,35 +167,27 @@
                 var name = $('#name').val();
                 var email = $('#email').val();
                 var url = window.location.href;
-                const encoded = window.btoa(`76a18954737473b80d6f6f3b97a0619d:3b0e22028f5189bb098ccd05f3bb1981`);
 
-                var settings = {
-                    "async": true,
-                    "crossDomain": true,
-                    "url": "https://api.mailjet.com/v3/REST/contactslist/10244091/managecontact",
-                    "method": "POST",
-                    "headers": {
-                        "content-type": "application/json",
-                        'Accept': 'application/json',
-                        "cache-control": "no-cache",
-                        'Authorization': 'Basic ' + btoa('76a18954737473b80d6f6f3b97a0619d:3b0e22028f5189bb098ccd05f3bb1981'),
-                        	'Access-Control-Allow-Origin': '*',
-						'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-						'Access-Control-Allow-Headers': 'Content-Type'
+
+                fetch('https://periwinkle-lion-slip.cyclic.app/mailjet', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json'
                     },
-                    "data": {
-                        'Action': 'addforce',
-                        'Email': email,
-                        'Name': name,
-                    }
-                };
-                $.ajax(settings).done(function(response) {
-                    console.log(response);
-                })
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        url
+                    })
+                }).then(res => {
+                    console.log("res => ", res);
+                    location.reload();
+                }).catch(error => console.log('error =>', error));
 
             });
 
-        })
+        });
     </script>
 
 </body>
